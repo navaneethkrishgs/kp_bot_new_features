@@ -1,7 +1,23 @@
 
 $(document).ready(function(){
 console.log('tested');
+    $('#videoplay').show();
+    $('.videostop').hide();
+
+    $(`#TakePhoto`).on('click',function(){
+
+    // var urlForPlayVideo = 'http://localhost:8080/stream_viewer?topic=/camera/image_raw';
+    // var urlForTake = 'http://localhost:8080/snapshot?topic=/camera/image_raw';
+    console.log('TakePhoto122');
+    console.log($('#video1'))
+    $('#videoplay').hide();
+    $('.videostop').show();
+    $(`#videoplay`)[0].setAttribute('src','');
    
+    
+  });
+
+
 $('#takePhoto').on('click',function(){
     console.log('takePhoto')
 // $(document).on('click', '#takePhoto', function (e) {

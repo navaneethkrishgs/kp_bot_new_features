@@ -1564,23 +1564,23 @@
                     <h1 id="faceHeadText">Take Photo</h1>
             <!-- <div class="row"></div> -->
             <div class="row" id="snapContainer_takePh">
-                    <div class="col-4">
-                            <div >
-                                    <div  >
-                                            <video width="320" height="240" controls id="videoTag">
-                                                    <source src="./test.mp4">
-                                            </video>
-                                          <!-- <source src="http://localhost:8080/stream_viewer?topic=/camera/image_raw" type="video/mp4"> -->
-                                        <!-- <source src="./test.mp4"> -->
-                                        	<!-- WebKit -->
+                    <div class="col-4" id="videoPlaying">
+                             <div id="videoDiv" >
+                                    <div id="video1" >
+                                          <source src="http://localhost:8080/stream_viewer?topic=/camera/image_raw" type="video/mp4" id="videoplay">
+                                            <img id="image" class="videostop" src="http://localhost:8080/snapshot?topic=/camera/image_raw" alt="Click button to take snapshot" width="350" height="200">
+                                        <!-- <source src="test.mp4"> -->
+                                            <!-- WebKit -->
                                     </div><br/>
-                                    <div class="navigation"  id="takePhoto">
+                                    <div class="navigation"  id="TakePhoto">
                                         <h5 id="faceText">Take Photo</h5>
-                                        <!-- onclick="takeShoot();" -->
                                 </div>
                                     <!-- <button onclick="shoot()" id="snapBtn"  type="button"  class="btn btn-secondary">Take snapshots</button><br/> -->
                             </div>
+
+
                     </div>
+
                     <div class="col-8">
                         <!-- <div id="output1"></div><br> -->
                         <div class="form-group" id="userProDect">
