@@ -7,12 +7,12 @@ $('#takePhoto').on('click',function(){
 // $(document).on('click', '#takePhoto', function (e) {
 var video = $('#videoTag').get(0);
 console.log(video);
-video.pause();
-// // if (video.paused === false) {
-// //     video.pause();
-// // } else {
-// //     video.play();
-// // }
+// video.pause();
+if (video.paused === false) {
+    video.pause();
+} else {
+    video.play();
+}
 
 // // return false;
 });
