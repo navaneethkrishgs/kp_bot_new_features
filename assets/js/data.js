@@ -51,14 +51,14 @@ $('#speech').hide();
 
           });
 
-  var create_id_viewer =  new MJPEGCANVAS.Viewer({
-            divID : 'video1',
-            host : 'localhost',
-            width : 350,
-            height : 200,
-            topic : '/camera/image_raw'
+//   var create_id_viewer =  new MJPEGCANVAS.Viewer({
+//             divID : 'video1',
+//             host : 'localhost',
+//             width : 350,
+//             height : 200,
+//             topic : '/camera/image_raw'
 
-          });
+//           });
    console.log(cam_viewer);
    //////////////timmer
      ////// to counter page
