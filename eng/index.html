@@ -240,9 +240,8 @@
                     <!-- <a href="#" onclick="nextPage('settings');"><li><i  id="nextPage" class="fa fa-arrow-left" aria-hidden="true">&nbsp;Back</i></a></li> -->
                 </li>
                 <li>
-                   
                 </li>
-            </ul>        
+            </ul>
                 <ul >
                         <li id="brt">
                                 <div id="bright">
@@ -267,19 +266,17 @@
                     <li>
                         <p id="time1"></p>
                     </li>
-                   
-                   
+
                 </ul>
         </header>
         <main class="background-image">
             <div class="btn">
                 <div class="row">
                         <div class="col-6 ">
-                            
+
                             <div class="navigation" onclick="changePass();" data-toggle="modal" data-target="#exampleModal1">
                                  <h5 id="changepassText">Change Password</h5>
                             </div>
- 
                         </div>
 
                         <div class="col-6">
@@ -1557,63 +1554,64 @@
 <!-- end station select-->
 
 <!-- start take photo session-->
-    <div id="take_photo">
-            <header  >
-            </header>
-            <main class="background-image">
-                    <h1 id="faceHeadText">Take Photo</h1>
-            <!-- <div class="row"></div> -->
-            <div class="row" id="snapContainer_takePh">
-                    <div class="col-4" id="videoPlaying">
-                             <div id="videoDiv" >
-                                    <div id="video1" >
-                                          <source src="http://localhost:8080/stream_viewer?topic=/camera/image_raw" type="video/mp4" id="videoplay">
-                                            <img id="image" class="videostop" src="http://localhost:8080/snapshot?topic=/camera/image_raw" alt="Click button to take snapshot" width="350" height="200">
-                                        <!-- <source src="test.mp4"> -->
-                                            <!-- WebKit -->
-                                    </div><br/>
-                                    <div class="navigation"  id="TakePhoto">
-                                        <h5 id="faceText">Take Photo</h5>
-                                </div>
-                                    <!-- <button onclick="shoot()" id="snapBtn"  type="button"  class="btn btn-secondary">Take snapshots</button><br/> -->
-                            </div>
-
-
+<div id="take_photo">
+    <header  >
+    </header>
+    <main class="background-image">
+            <h1 id="faceHeadText">Take Photo</h1>
+    <!-- <div class="row"></div> -->
+    <div class="row" id="snapContainer_takePh">
+            <div class="col-4">
+                    <div id="videoDiv" >
+                            <div id="video1" >
+                                  <source src="http://localhost:8080/stream_viewer?topic=/camera/image_raw" type="video/mp4">
+                                <!-- <source src="test.mp4"> -->
+                                    <!-- WebKit -->
+                            </div><br/>
+                            <div class="navigation" onclick="takeShoot();" >
+                                <h5 id="faceText">Take Photo</h5>
+                        </div>
+                            <!-- <button onclick="shoot()" id="snapBtn"  type="button"  class="btn btn-secondary">Take snapshots</button><br/> -->
                     </div>
-
-                    <div class="col-8">
-                        <!-- <div id="output1"></div><br> -->
-                        <div class="form-group" id="userProDect">
-                            <label for="email" id="proText">Name:</label>
-                            <input type="text" class="form-control" id="idname" placeholder="Enter name" name="name">
-                            <br>
-                            <label for="email" id="proText">Age:</label>
-                            <input type="number" class="form-control idage" id="idage" min="0" oninput="validity.valid||(value='');" placeholder="Enter age" name="age">
-                        </div>
-                        <!-- <div class="form-group" id="userProDect">
-                                
-                            </div> -->
-                        <div id="addfaceDiv1">
-                            <div class="navigation" onclick="addFace();" >
-                                <h5 id="addfaceText1">Save</h5>
-                            </div>
-                        </div>
-                        <div id="snackbar">Please enter all required fields</div>
+            </div>
+            <div class="col-2">
+                <div id="output">
+                    <img src="../assets/images/id_img.png" width="200" height="150">
+                </div>
+            </div>
+            <div class="col-6">
+                <!-- <div id="output1"></div><br> -->
+                <div class="form-group" id="userProDect">
+                    <label for="email" id="proText">Name:</label>
+                    <input type="text" class="form-control" id="idname" placeholder="Enter name" name="name">
+                    <br>
+                    <label for="email" id="proText">Age:</label>
+                    <input type="number" class="form-control idage" id="idage" min="0" oninput="validity.valid||(value='');" placeholder="Enter age" name="age">
+                </div>
+                <!-- <div class="form-group" id="userProDect">
+                        
+                    </div> -->
+                <div id="addfaceDiv1">
+                    <div class="navigation" onclick="addFace();" >
+                        <h5 id="addfaceText1">Save</h5>
                     </div>
                 </div>
+                <div id="snackbar">Please enter all required fields</div>
+            </div>
+        </div>
 
-                    <footer>
-                        
-                    </main>
-                    <div class="enterBtn1" id="enterBtn" >
+            <footer>
                 
-                    <div class="centered1"> 
-                        <a href="#" onclick="nextPage('takephoto');"><li><i  id="nextPage" class="fa fa-arrow-left takephotoPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
-                    </div>
-                    </div> 
-                    
-                </footer>  
-    </div>
+            </main>
+            <div class="enterBtn1" id="enterBtn" >
+        
+            <div class="centered1"> 
+                <a href="#" onclick="nextPage('takephoto');"><li><i  id="nextPage" class="fa fa-arrow-left takephotoPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+            </div>
+            </div> 
+            
+        </footer>  
+</div>
 <!-- end take photo select-->
 <!-- start take photo session-->
 <div id="id_card">
