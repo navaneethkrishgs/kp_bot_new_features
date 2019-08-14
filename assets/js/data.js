@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
 console.log('tested');
+$(`#imageIdNew`).hide();
     // $('#videoplay').show();
     // $('.videostop').hide();
 
@@ -44,14 +45,14 @@ $('#speech').hide();
 
           });
 
-//   var create_id_viewer =  new MJPEGCANVAS.Viewer({
-//             divID : 'video1',
-//             host : 'localhost',
-//             width : 350,
-//             height : 200,
-//             topic : '/camera/image_raw'
+  var create_id_viewer =  new MJPEGCANVAS.Viewer({
+            divID : 'video1',
+            host : 'localhost',
+            width : 350,
+            height : 200,
+            topic : '/camera/image_raw'
 
-//           });
+          });
    console.log(cam_viewer);
    //////////////timmer
      ////// to counter page
@@ -165,6 +166,7 @@ $('#speech').hide();
     });
     $(`.takePhoto`).on('click',function(){
         console.log('takePhoto');
+
         couterpage_clear();
     })
     //// id card 
@@ -322,7 +324,16 @@ var listener = new ROSLIB.Topic({
 //   });
 
 
-
+var id_image = new ROSLIB.Service({
+    ros : ros,
+    name : '/id_image_server',
+    serviceType : 'saya_bringup/demo_srv'
+  });
+var request = new ROSLIB.ServiceRequest({
+    in_ : "null"
+  });
+  
+  
 
 var ui_refresh = new ROSLIB.Topic({
      ros : ros,
@@ -427,6 +438,21 @@ var keyboard_state = new ROSLIB.Topic({
         moveSomeWhere(0, 0.5)
         Sleep(100)
         moveSomeWhere(0, 0)
+    }
+    function take_snapshot(){
+       $("#loadingPage").show();
+       $(`#imageIdNew`).show();
+      // $('#id_img').setAttribute('crossOrigin﻿', 'anonymous');
+       //id_image.publish(str);
+       id_image.callService(request, function(result) {
+       console.log('Result for service call on ');
+        $("#loadingPage").hide();
+      });
+       $('.imageTaken').show();
+      console.log('take_snapshot');
+     $("#imageIdNew").attr("src", 'http://localhost:8080/snapshot?topic=/camera/image_raw');
+     localStorage.setItem('idImage', 'http://localhost:8080/snapshot?topic=/camera/image_raw');
+     // $("#id_img").attr("src", 'http://localhost:8080/snapshot?topic=/camera/image_raw');
     }
 
 

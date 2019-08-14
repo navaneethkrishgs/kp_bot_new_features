@@ -27,7 +27,7 @@ module.exports.create = async (req, res) => {
     const createFile = async (req,res) => {
       // var filepath =  "files/"+req.file.filename;
     //   var filepath =  'public/files'+req.file.filename;
-        var pathFile = `~/Documents/Kpbot_ui_new/kpbotservices/public/files/${req.file.filename}`
+        var pathFile = `/home/asimov/Navaneeth_ws/kp_bot_new_features/kpbotservices/public/files/${req.file.filename}`
         shell.exec(`lp ${pathFile}`);
     }
 }

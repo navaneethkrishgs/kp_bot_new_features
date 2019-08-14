@@ -1554,64 +1554,65 @@
 <!-- end station select-->
 
 <!-- start take photo session-->
-<div id="take_photo">
-    <header  >
-    </header>
-    <main class="background-image">
-            <h1 id="faceHeadText">Take Photo</h1>
-    <!-- <div class="row"></div> -->
-    <div class="row" id="snapContainer_takePh">
-            <div class="col-4">
-                    <div id="videoDiv" >
-                            <div id="video1" >
-                                  <source src="http://localhost:8080/stream_viewer?topic=/camera/image_raw" type="video/mp4">
-                                <!-- <source src="test.mp4"> -->
-                                    <!-- WebKit -->
-                            </div><br/>
-                            <div class="navigation" onclick="takeShoot();" >
-                                <h5 id="faceText">Take Photo</h5>
+    <div id="take_photo">
+            <header  >
+            </header>
+            <main class="background-image">
+                    <h1 id="faceHeadText">Take Photo</h1>
+            <!-- <div class="row"></div> -->
+            <div class="row" id="snapContainer_takePh">
+                    <div class="col-4">
+                            <div id="videoDiv" >
+                                    <div id="video1" >
+                                          <source src="http://localhost:8080/stream_viewer?topic=/camera/image_raw" type="video/mp4">
+                                        <!-- <source src="test.mp4"> -->
+                                            <!-- WebKit -->
+                                    </div><br/>
+                                    <div class="navigation" onclick="take_snapshot();" >
+                                        <h5 id="faceText">Take Photo</h5>
+                                </div>
+                                    <!-- <button onclick="shoot()" id="snapBtn"  type="button"  class="btn btn-secondary">Take snapshots</button><br/> -->
+                            </div>
+                    </div>
+                    <div class="col-2">
+                        <div id="output" class="imageTaken">
+                            <img src="http://localhost:8080/snapshot?topic=/camera/image_raw" id="imageIdNew" width="200" height="150">
                         </div>
-                            <!-- <button onclick="shoot()" id="snapBtn"  type="button"  class="btn btn-secondary">Take snapshots</button><br/> -->
                     </div>
-            </div>
-            <div class="col-2">
-                <div id="output">
-                    <img src="../assets/images/id_img.png" width="200" height="150">
-                </div>
-            </div>
-            <div class="col-6">
-                <!-- <div id="output1"></div><br> -->
-                <div class="form-group" id="userProDect">
-                    <label for="email" id="proText">Name:</label>
-                    <input type="text" class="form-control" id="idname" placeholder="Enter name" name="name">
-                    <br>
-                    <label for="email" id="proText">Age:</label>
-                    <input type="number" class="form-control idage" id="idage" min="0" oninput="validity.valid||(value='');" placeholder="Enter age" name="age">
-                </div>
-                <!-- <div class="form-group" id="userProDect">
-                        
-                    </div> -->
-                <div id="addfaceDiv1">
-                    <div class="navigation" onclick="addFace();" >
-                        <h5 id="addfaceText1">Save</h5>
+                    <div class="col-6">
+                        <!-- <div id="output1"></div><br> -->
+                        <div class="form-group" id="userProDect">
+                            <label for="email" id="proText">Name:</label>
+                            <input type="text" class="form-control" id="idname" placeholder="Enter name" name="name">
+                            <br>
+                            <label for="email" id="proText">Age:</label>
+                            <input type="number" class="form-control idage" id="idage" min="0" oninput="validity.valid||(value='');" placeholder="Enter age" name="age">
+                        </div>
+                        <!-- <div class="form-group" id="userProDect">
+                                
+                            </div> -->
+                        <div id="addfaceDiv1">
+                            <div class="navigation" onclick="addFace();" >
+                                <h5 id="addfaceText1">Save</h5>
+                            </div>
+                        </div>
+                        <div id="snackbar">Please enter all required fields</div>
                     </div>
                 </div>
-                <div id="snackbar">Please enter all required fields</div>
-            </div>
-        </div>
 
-            <footer>
+                    <footer>
+                        
+                    </main>
+                    <div class="enterBtn1" id="enterBtn" >
                 
-            </main>
-            <div class="enterBtn1" id="enterBtn" >
-        
-            <div class="centered1"> 
-                <a href="#" onclick="nextPage('takephoto');"><li><i  id="nextPage" class="fa fa-arrow-left takephotoPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
-            </div>
-            </div> 
-            
-        </footer>  
-</div>
+                    <div class="centered1"> 
+                        <a href="#" onclick="nextPage('takephoto');"><li><i  id="nextPage" class="fa fa-arrow-left takephotoPageBackBtn" aria-hidden="true">&nbsp;Back</i></a>
+                    </div>
+                    </div> 
+                    
+                </footer>  
+    </div>
+
 <!-- end take photo select-->
 <!-- start take photo session-->
 <div id="id_card">
@@ -1623,7 +1624,7 @@
         <div class="row print-wrap page1" id="onlyforPrint">
             
                 <div class="col-12" id="id_img_col">
-                        <img src="http://localhost:8080/snapshot?topic=/camera/image_raw" id="id_img" alt="Avatar" style="width:200px">
+                        <img  src="../id_image/image1.png" id="id_img" alt="Avatar" style="width:200px">
                 </div>
                 <div class="col-12" id="id_img_col">
                     <!-- <h3 id="id_text" class="example-screen"> </h3> -->
@@ -1639,7 +1640,7 @@
             <div class="row" id="id_row">
                     <!-- onclick="window.print();" -->
                 <div class="col-12 example-screen" id="img_col" onclick="generatePDF();">
-                        <img src="./hdfc-icons-sprite_enter1.png" alt="Paris" style="width:38%;">
+                        <img  src="./hdfc-icons-sprite_enter1.png" alt="Paris" style="width:38%;">
                     <!-- <div class="navigation1"  onclick="printIdCard();" > -->
                         <h5 id="printID">PRINT</h5>
                     <!-- </div> -->
@@ -1708,6 +1709,7 @@ function generatePDF() {
 $("#downloadbtn").hide();
 $("#genmsg").show();
     html2canvas($(".print-wrap:eq(0)")[0], { allowTaint: true }).then(function(canvas) {
+        console.log(canvas)
 
         calculatePDF_height_width(".print-wrap",0);
         var imgData = canvas.toDataURL("image/png", 1.0);
@@ -1744,6 +1746,27 @@ $("#genmsg").show();
                         console.log(response);
                         $("#id_card").show();
                        $("#loadingPage").hide();
+                        ui_refresh.publish(str);
+                      sleep(300);
+                      ui_refresh.publish(str);
+                      $("#indexPage").show();
+                      $("#welcomePage").hide();
+                      $("#settingsPage").hide();
+                      $("#counterPage").hide();
+                      $("#navigationPage").hide();
+                      $("#speechPage").hide();
+                      $("#videoPage").hide();
+                      $("#navigationPage_counter1").hide();   
+                      $("#navigationPage_counter2").hide(); 
+                      $("#navigationPage_counter3").hide();
+                      $("#navigationPage_counter4").hide();
+                      $("#navigationPage_counter5").hide();
+                      $("#navigationPage_counter6").hide();
+                       ui_refresh.publish(str);
+                      sleep(3000);
+                      ui_refresh.publish(str);
+                      sleep(3000);
+                      ui_refresh.publish(str);
                     })
                     .catch(function (error) {
                         console.log(error);

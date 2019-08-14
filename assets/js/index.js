@@ -1070,6 +1070,10 @@ else if(nextPage == 'settings_nav_joystick_next'){
 console.log('takephoto')
 $(`#take_photo`).hide();
 $(`#counterPage`).show();
+ $("#imageIdNew").attr("src", '');
+     // localStorage.remove('idImage');
+ $("#id_img").attr("src", '');
+
     // $("#station_select").hide();
     // $("#counterPage").show();
 
@@ -1779,6 +1783,7 @@ function cameraFeed(){
 
 ////////////////////////face 
 function addFace(){
+    $(`#imageIdNew`).hide();
     if(!$(`#idname`).val() || !$(`#idage`).val()){
         console.log('enter ')
         var x = document.getElementById("snackbar");
