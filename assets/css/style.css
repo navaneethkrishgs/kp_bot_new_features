@@ -1490,3 +1490,12 @@ video::-webkit-media-controls-volume-slider {
 video::-webkit-media-controls-timeline {
     display: none;
 } */
+#skypeimgDiv{
+  position: absolute;
+  left: 45%;
+  top: 48%;
+}
+#skype_a{
+  color: #e3e6ea;
+}
+
